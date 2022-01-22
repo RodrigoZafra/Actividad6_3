@@ -30,7 +30,7 @@ public class RegistroSegundoTutor extends AppCompatActivity {
         nif = findViewById(R.id.etNif);
 
         Intent intent = new Intent();
-        intent.putExtra("Clase", "RegistroAlumno");
+        intent.putExtra("Clase", "RegistroSegundoTutor");
         intent.putExtra("Nombre", nombre.getText().toString());
         intent.putExtra("Apellido", apellido.getText().toString());
         intent.putExtra("Domicilio", domicilio.getText().toString());

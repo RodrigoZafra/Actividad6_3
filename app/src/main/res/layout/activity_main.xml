@@ -25,42 +25,90 @@
         app:layout_constraintTop_toBottomOf="@id/tv1" />
 
     <TextView
-        android:id="@+id/tvAlumno"
+        android:id="@+id/datosAlumno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
+        android:text="Datos Alumno"
         android:textAlignment="center"
-        android:textSize="10dp"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/spinner" />
+
+    <TextView
+        android:id="@+id/tvAlumno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/purple_200"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/datosAlumno" />
+
+    <TextView
+        android:id="@+id/datosTutor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Datos Tutor"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAlumno" />
 
     <TextView
         android:id="@+id/tvTutor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/purple_200"
         android:textAlignment="center"
-        android:textSize="10dp"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvAlumno" />
+        app:layout_constraintTop_toBottomOf="@id/datosTutor" />
+
+    <TextView
+        android:id="@+id/datosSegundoTutor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Datos Segundo Tutor"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTutor" />
 
     <TextView
         android:id="@+id/tvSegundoTutor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/purple_200"
         android:textAlignment="center"
-        android:textSize="10dp"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTutor" />
+        app:layout_constraintTop_toBottomOf="@id/datosSegundoTutor" />
+
+    <TextView
+        android:id="@+id/datosEscolarizacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Datos Escolarizacion"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSegundoTutor" />
 
     <TextView
         android:id="@+id/tvEscolarizacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/purple_200"
         android:textAlignment="center"
-        android:textSize="10dp"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvSegundoTutor" />
+        app:layout_constraintTop_toBottomOf="@id/datosEscolarizacion" />
 </androidx.constraintlayout.widget.ConstraintLayout>
