@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tutor;
     private TextView segundoTutor;
     private TextView escolarizacionAlumno;
+    private String alumnoS, tutorS, segundoTutorS, escolarizacionAlumnoS;
     ActivityResultLauncher<Intent> my_ActivityResultLauncher;
 
     @Override
@@ -33,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         alumno = findViewById(R.id.tvAlumno);
+        tutor = findViewById(R.id.tvTutor);
+        segundoTutor = findViewById(R.id.tvSegundoTutor);
+        escolarizacionAlumno = findViewById(R.id.tvEscolarizacion);
 
         opcionesMenu = new ArrayList<>();
         opcionesMenu.add("Elige una opcion");
@@ -75,16 +79,21 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onActivityResult(ActivityResult result) {
                         if (result.getResultCode() == Activity.RESULT_OK && result.getData().getStringExtra("Clase").equals("RegistroAlumno")) {
+                            alumnoS = datos(result);
+                            cadena(alumnoS, tutorS, segundoTutorS, escolarizacionAlumnoS);
+                        } else if (result.getResultCode() == Activity.RESULT_OK && result.getData().getStringExtra("Clase").equals("RegistroTutor")) {
+                            tutorS = datos(result);
+                            cadena(alumnoS, tutorS, segundoTutorS, escolarizacionAlumnoS);
+                        } else if (result.getResultCode() == Activity.RESULT_OK && result.getData().getStringExtra("Clase").equals("RegistroSegundoTutor")) {
+                            segundoTutorS = datos(result);
+                            cadena(alumnoS, tutorS, segundoTutorS, escolarizacionAlumnoS);
+                        } else if (result.getResultCode() == Activity.RESULT_OK && result.getData().getStringExtra("Clase").equals("EscolarizacionAlumno")) {
                             Intent intent_vuelta = result.getData();
-                            alumno.setText(datos(intent_vuelta));
-                        }
-                        if (result.getResultCode() == Activity.RESULT_OK && result.getData().getStringExtra("Clase").equals("RegistroTutor")) {
-                            Intent intent_vuelta = result.getData();
-                            alumno.setText(datos(intent_vuelta));
-                        }
-                        if (result.getResultCode() == Activity.RESULT_OK && result.getData().getStringExtra("Clase").equals("RegistroSegundoTutor")) {
-                            Intent intent_vuelta = result.getData();
-                            alumno.setText(datos(intent_vuelta));
+                            escolarizacionAlumnoS = "Centro procedencia: " + intent_vuelta.getStringExtra("CentroProcedencia").toString()
+                                    + ", Curso procedencia: " + intent_vuelta.getStringExtra("CursoProcedencia").toString()
+                                    + ", Tipo centro prodecencia: " + intent_vuelta.getStringExtra("TipoCentroProcedencia").toString()
+                                    + ", Beca: " + intent_vuelta.getStringExtra("Beca").toString();
+                            cadena(alumnoS, tutorS, segundoTutorS, escolarizacionAlumnoS);
                         } else if (result.getResultCode() == Activity.RESULT_CANCELED) {
                             String mensaje_vuelta = "";
                             mensaje_vuelta = "Sin mensaje de vuelta";
@@ -99,12 +108,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public String datos(Intent intent_vuelta) {
+    public String datos(ActivityResult result) {
+        Intent intent_vuelta = result.getData();
         return "Nombre: " + intent_vuelta.getStringExtra("Nombre").toString() + ", Apellido: "
                 + intent_vuelta.getStringExtra("Apellido").toString() + ", Domicilio: "
                 + intent_vuelta.getStringExtra("Domicilio").toString() + ", Nacionalidad: "
                 + intent_vuelta.getStringExtra("Nacionalidad").toString() + ", Fecha Nacimiento: "
                 + intent_vuelta.getStringExtra("FechaNacimiento").toString() + ", NIF: "
                 + intent_vuelta.getStringExtra("NIF").toString();
+    }
+
+    public void cadena(String alumnoS, String tutorS, String segundoTutorS, String escolarizacionAlumnoS) {
+        alumno.setText(alumnoS);
+        tutor.setText(tutorS);
+        segundoTutor.setText(segundoTutorS);
+        escolarizacionAlumno.setText(escolarizacionAlumnoS);
     }
 }

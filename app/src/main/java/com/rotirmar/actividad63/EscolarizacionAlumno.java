@@ -2,6 +2,7 @@ package com.rotirmar.actividad63;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -30,5 +31,17 @@ public class EscolarizacionAlumno extends AppCompatActivity {
         rb = (RadioButton) findViewById(idSeleccionado);
         beca = findViewById(R.id.swBeca);
 
+        Intent intent = new Intent();
+        intent.putExtra("Clase", "EscolarizacionAlumno");
+        intent.putExtra("CentroProcedencia", centroProcedencia.getText().toString());
+        intent.putExtra("CursoProcedencia", cursoProcedencia.getText().toString());
+        intent.putExtra("TipoCentroProcedencia", rb.getText().toString());
+        if (beca.isChecked())
+            intent.putExtra("Beca", "Si");
+        else
+            intent.putExtra("Beca", "No");
+
+        setResult(RESULT_OK, intent);
+        finish();
     }
 }
