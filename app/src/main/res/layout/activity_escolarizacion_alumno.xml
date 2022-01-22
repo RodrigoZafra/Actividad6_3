@@ -6,4 +6,88 @@
     android:layout_height="match_parent"
     tools:context=".EscolarizacionAlumno">
 
+    <TextView
+        android:id="@+id/tvRellenaFormulario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rellena datos de escolarizacion"
+        android:textSize="29dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etCentroProcedencia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Centro de procedencia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvRellenaFormulario" />
+
+    <EditText
+        android:id="@+id/etCursoProcedencia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Curso de procedencia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etCentroProcedencia" />
+
+    <TextView
+        android:id="@+id/tvRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tipo de centro de procedencia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etCursoProcedencia" />
+
+    <RadioGroup
+        android:id="@+id/rgTipoCentroProcedencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvRadioGroup">
+
+        <RadioButton
+            android:id="@+id/rbPublico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Público" />
+
+        <RadioButton
+            android:id="@+id/rbPrivado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Privado" />
+
+        <RadioButton
+            android:id="@+id/rbConcertado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Concertado" />
+
+        <RadioButton
+            android:id="@+id/rbExterior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exterior" />
+    </RadioGroup>
+
+    <Switch
+        android:id="@+id/swBeca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Beca"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rgTipoCentroProcedencia" />
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="GuardarDatos"
+        android:text="Guardar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/swBeca" />
 </androidx.constraintlayout.widget.ConstraintLayout>

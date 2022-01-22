@@ -10,7 +10,7 @@
         android:id="@+id/tv1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:text="Formularios"
         android:textAlignment="center"
         android:textSize="40dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,38 +25,42 @@
         app:layout_constraintTop_toBottomOf="@id/tv1" />
 
     <TextView
-        android:id="@+id/tv2"
+        android:id="@+id/tvAlumno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:textAlignment="center"
-        android:textSize="40dp"
+        android:textSize="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/spinner" />
 
     <TextView
-        android:id="@+id/tv3"
+        android:id="@+id/tvTutor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:textAlignment="center"
-        android:textSize="40dp"
+        android:textSize="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv2" />
+        app:layout_constraintTop_toBottomOf="@id/tvAlumno" />
 
     <TextView
-        android:id="@+id/tv4"
+        android:id="@+id/tvSegundoTutor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:textAlignment="center"
-        android:textSize="40dp"
+        android:textSize="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv3" />
+        app:layout_constraintTop_toBottomOf="@id/tvTutor" />
 
     <TextView
-        android:id="@+id/tv5"
+        android:id="@+id/tvEscolarizacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:textAlignment="center"
-        android:textSize="40dp"
+        android:textSize="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv4" />
+        app:layout_constraintTop_toBottomOf="@id/tvSegundoTutor" />
 </androidx.constraintlayout.widget.ConstraintLayout>
